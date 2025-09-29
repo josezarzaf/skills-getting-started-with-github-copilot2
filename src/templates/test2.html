@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ title }}</h1>
+            <p class="subtitle">Exploring AI-Powered Development</p>
+        </header>
+        
+        <main>
+            <div class="message-section">
+                <h2>{{ message }}</h2>
+                <p>This page demonstrates how GitHub Copilot can help you build web applications quickly and efficiently.</p>
+            </div>
+            
+            <div class="navigation">
+                <h3>Navigate to:</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/test2" class="current">Test2 Demo</a></li>
+                </ul>
+            </div>
+            
+            <div class="features-section">
+                <h3>GitHub Copilot Features:</h3>
+                <ul class="features-list">
+                    {% for feature in features %}
+                    <li>{{ feature }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="demo-section">
+                <h3>Interactive Demo</h3>
+                <div class="demo-box">
+                    <p>This section was generated with GitHub Copilot assistance!</p>
+                    <button onclick="showMessage()">Click me for a Copilot-generated message</button>
+                    <div id="message-display"></div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 GitHub Copilot Skills Exercise - Test2 Page</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
